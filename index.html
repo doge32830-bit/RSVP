@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ilianna Reyna's Birthday Dinner RSVP</title>
+<style>
+:root{--bg:#fff7f3;--card:#fff;--ink:#2b1d24;--mut:#7a6a72;--acc:#c2185b;--acc2:#8e1246;--line:#ecd9df;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1217;--card:#291a21;--ink:#f6e9ee;--mut:#b9a3ad;--acc:#f06292;--acc2:#ff8ab3;--line:#44303a}}
+:root[data-theme="dark"]{--bg:#1c1217;--card:#291a21;--ink:#f6e9ee;--mut:#b9a3ad;--acc:#f06292;--acc2:#ff8ab3;--line:#44303a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.5}
+main{max-width:520px;margin:0 auto;padding:28px 18px 48px}
+h1{font-size:2rem;line-height:1.15;margin:.2em 0;text-align:center}
+.sub{text-align:center;color:var(--mut);margin:0 0 22px;font-family:system-ui,sans-serif}
+.emoji{text-align:center;font-size:2.6rem}
+form,.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+label{display:block;font:600 .9rem system-ui,sans-serif;margin:14px 0 6px}
+input[type=text],input[type=tel],input[type=number],select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font-size:1rem;background:var(--bg);color:var(--ink)}
+.sig{font-family:"Brush Script MT","Segoe Script",cursive;font-size:1.5rem}
+.hint{font:.8rem system-ui,sans-serif;color:var(--mut);margin-top:4px}
+button{font:600 1rem system-ui,sans-serif;border:0;border-radius:12px;padding:14px;width:100%;margin-top:20px;background:var(--acc);color:#fff;cursor:pointer}
+button:disabled{background:#bdb3b8;opacity:.6;cursor:not-allowed}
+.terms{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:.85rem system-ui,sans-serif;margin-top:16px}
+.err{color:#d32f2f;font:.85rem system-ui,sans-serif;margin-top:10px;min-height:1em}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;padding:18px;z-index:9}
+#ov .card{max-width:440px;width:100%}
+#ov h2{margin:.1em 0 .5em}
+#ov ul{padding-left:1.2em;font-family:system-ui,sans-serif}
+.chk{display:flex;gap:10px;align-items:flex-start;font:.95rem system-ui,sans-serif;margin-top:14px}
+.chk input{margin-top:4px;width:18px;height:18px}
+.hide{display:none!important}
+.btn{display:block;text-align:center;text-decoration:none;font:600 1rem system-ui,sans-serif;border-radius:12px;padding:14px;margin-top:20px;background:var(--acc);color:#fff}
+pre{white-space:pre-wrap;background:var(--bg);padding:10px;border-radius:8px;font-size:.85rem}
+</style>
+</head>
+<body>
+<div id="ov" role="dialog" aria-modal="true" aria-labelledby="dt">
+  <div class="card">
+    <h2 id="dt">Before you RSVP 🍽️</h2>
+    <p>Please read and agree to the following:</p>
+    <ul>
+      <li>You are <b>responsible for your own bill</b> at the restaurant.</li>
+      <li><b>Everyone will have separate checks</b> unless discussed otherwise with the host.</li>
+    </ul>
+    <label class="chk"><input type="checkbox" id="agree"> <span>I have read and agree to these terms and conditions.</span></label>
+    <button id="okBtn" disabled>Continue</button>
+  </div>
+</div>
+
+<main>
+  <div class="emoji">🎂</div>
+  <h1>Ilianna Reyna's<br>Birthday Dinner</h1>
+  <p class="sub">You're invited! Please RSVP below.</p>
+
+  <div class="card" style="text-align:center;margin-bottom:16px">
+    <div style="font:600 .75rem system-ui,sans-serif;letter-spacing:.08em;color:var(--mut)">WHEN &amp; WHERE</div>
+    <div style="font-size:1.25rem;margin:6px 0 2px"><b>Friday at 8:00 PM</b></div>
+    <div>1201 Broadway<br>Saugus, MA 01906</div>
+    <a href="https://maps.apple.com/?q=1201+Broadway,+Saugus,+MA+01906" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font:600 .9rem system-ui,sans-serif;color:var(--acc)">Open in Maps</a>
+  </div>
+
+  <form id="f" novalidate>
+    <label for="name">Full name</label>
+    <input type="text" id="name" autocomplete="name" required>
+
+    <label for="phone">Phone number</label>
+    <input type="tel" id="phone" autocomplete="tel" placeholder="(555) 123-4567" required>
+
+    <label for="att">Will you be attending?</label>
+    <select id="att"><option value="Yes">Yes, I'll be there!</option><option value="No">Sorry, can't make it</option></select>
+
+    <div id="gw">
+      <label for="g">Number of guests (including you)</label>
+      <input type="number" id="g" min="1" max="10" value="1">
+    </div>
+
+    <div class="terms"><b>Terms:</b> I am responsible for my own bill, and everyone has separate checks unless discussed otherwise.</div>
+
+    <label for="sig">Signature (type your full name)</label>
+    <input type="text" id="sig" class="sig" autocomplete="off" required>
+    <div class="hint">By signing, you agree to the terms above.</div>
+
+    <div class="err" id="err" role="alert"></div>
+    <button type="submit" id="rsvp" disabled>RSVP</button>
+  </form>
+
+  <div class="card hide" id="done">
+    <h2>Thank you! 🎉</h2>
+    <p id="msg"></p>
+    <div id="fb">
+      <p class="hint" id="hint"></p>
+      <a id="sms" class="btn" href="#" target="_blank" rel="noopener">Text my RSVP to the host</a>
+      <button type="button" id="cp" style="background:transparent;color:var(--acc);border:1px solid var(--acc)">Copy RSVP instead</button>
+      <p class="hint">If the button does nothing, copy the RSVP and text it to 781-930-9031.</p>
+      <pre id="txt"></pre>
+    </div>
+  </div>
+</main>
+
+<script>
+(function(){
+  var $=function(i){return document.getElementById(i)};
+  var agree=$("agree"),okBtn=$("okBtn"),rsvp=$("rsvp"),ov=$("ov");
+  agree.addEventListener("change",function(){okBtn.disabled=!agree.checked});
+  okBtn.addEventListener("click",function(){ if(!agree.checked)return; ov.classList.add("hide"); rsvp.disabled=false; });
+  $("att").addEventListener("change",function(){$("gw").classList.toggle("hide",this.value==="No")});
+
+  var db=null;
+  if(window.claude&&claude.use){claude.use("db").then(function(d){db=d}).catch(function(){})}
+
+  $("f").addEventListener("submit",function(e){
+    e.preventDefault();
+    var err=$("err");err.textContent="";
+    var name=$("name").value.trim(),phone=$("phone").value.trim(),sig=$("sig").value.trim();
+    if(!agree.checked){err.textContent="Please agree to the terms first.";ov.classList.remove("hide");return}
+    if(!name){err.textContent="Please enter your name.";return}
+    if(phone.replace(/\D/g,"").length<10){err.textContent="Please enter a valid phone number.";return}
+    if(!sig){err.textContent="Please sign by typing your name.";return}
+    if(sig.toLowerCase().replace(/\s+/g," ")!==name.toLowerCase().replace(/\s+/g," ")){err.textContent="Your signature must match your full name.";return}
+    var att=$("att").value;
+    var rec={name:name,phone:phone,attending:att,guests:att==="Yes"?+$("g").value||1:0,signature:sig,agreedToTerms:true,submittedAt:new Date().toISOString()};
+    rsvp.disabled=true;
+    var show=function(saved){
+      $("f").classList.add("hide");$("done").classList.remove("hide");
+      $("msg").textContent=att==="Yes"?"Your RSVP for Ilianna's birthday dinner is in. See you there!":"Sorry you can't make it. Thanks for letting us know!";
+      var t="RSVP - Ilianna Reyna's Birthday Dinner\nName: "+name+"\nPhone: "+phone+"\nAttending: "+att+(att==="Yes"?"\nGuests: "+rec.guests:"")+"\nSigned: "+sig+" (agreed to separate checks / own bill)";
+      $("txt").textContent=t;
+      $("cp").onclick=function(){var b=this;try{navigator.clipboard.writeText(t).then(function(){b.textContent="Copied! Now text it to 781-930-9031"})}catch(x){var r=document.createRange();r.selectNode($("txt"));getSelection().removeAllRanges();getSelection().addRange(r);b.textContent="Selected - tap Copy, then text it to 781-930-9031"}};
+      $("sms").href="sms:+17819309031?&body="+encodeURIComponent(t);
+      $("hint").textContent=saved?"One last step: tap below and press send so the host gets your RSVP by text.":"Tap below and press send so the host gets your RSVP by text. It is not confirmed until you send it.";
+    };
+    if(db){
+      var id="r"+Date.now()+Math.random().toString(36).slice(2,7);
+      db.doc("rsvps/"+id).set(rec).then(function(){show(true)}).catch(function(){show(false)});
+    }else{show(false)}
+  });
+})();
+</script>
+</body>
+</html>
